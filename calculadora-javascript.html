@@ -139,8 +139,13 @@
         
         /*function porcentagem()
         {
-            var display = document.getElementById('display').innerHTML;
-            document.getElementById('display').innerHTML = (numero/num) * 100;
+            var num = parseFloat(document.getElementById("num").value);
+            var numero = parseFloat(document.getElementById("numero").value);
+
+            if (num > numero)
+	        document.getElementById("display").value =	(num/numero)-1 *100;
+        else
+	        document.getElementById("display").value =	(num/numero)-1 *100;
         }*/
 
         function backspace()
