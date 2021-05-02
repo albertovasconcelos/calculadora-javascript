@@ -11,13 +11,14 @@
     <script src="https://kit.fontawesome.com/0c183dd402.js" crossorigin="anonymous"></script>
     
     <style>
-        *{
-            margin: 0;
+       * {
             padding: 0;
+            margin: 5px;
+            text-align: center;
         }
-        /*.fundo{
-            background: #D9D9D9;
-        }*/
+        fundo {
+            background-color: #39a0e6;
+        }
 
         .calculadora {
             margin-top: 40px;
@@ -26,8 +27,8 @@
             background-color: rgba(0, 0, 0, 0.8);;
             border-radius: 20px;    
             box-shadow: 1px 1px 5px #000;
-}
-        .botao{
+        }
+        .btNum{
             width: 60px;
             height: 50px;
             font-size: 25px;
@@ -37,15 +38,22 @@
             border: 1px solid rgb(0, 0, 0, 0.25);
             color: white;
         }
-        .botao:hover{
+        .btNum:hover{
             background-color: black;
         }
-        .blaranja{
-            background-color: orange;
-            transition: 100ms ease;
+        .btMat{
+
+            width: 60px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 5px;
+            background-color:  orange;
+            border: 1px solid rgb(0, 0, 0, 0.25);
+            color: white;
         }
-        .blaranja:hover{
-            opacity: 90%;
+        .btMat:hover{
+            background-color: black;
         }
         #display{
             background-color: #bccd95;
@@ -81,6 +89,7 @@
     </style>
 
 </head>
+
 <body>
     <div class="fundo">
     
@@ -91,33 +100,33 @@
             
             <table>
                 <tr>
-                    <td><button class="botao" onclick="clean()">C</button></td>
-                    <td><button class="botao" onclick="porcentagem()">%</button></td>
-                    <td colspan="2"><button class="botao" style = "width: 106px;" onclick="backspace()">DEL</button></td>
+                    <td><button class="btNum" onclick="clean()">C</button></td>
+                    <td><button class="btNum" onclick="porcentagem()">%</button></td>
+                    <td colspan="2"><button class="btNum" style = "width: 106px;" onclick="backspace()">DEL</button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao" onclick="insert('7')">7</button></td>
-                    <td><button class="botao" onclick="insert('8')">8</button></td>
-                    <td><button class="botao" onclick="insert('9')">9</button></td>
-                    <td><button class="botao blaranja" onclick="insert('/')">÷</button></td>
+                    <td><button class="btNum" onclick="insert('7')">7</button></td>
+                    <td><button class="btNum" onclick="insert('8')">8</button></td>
+                    <td><button class="btNum" onclick="insert('9')">9</button></td>
+                    <td><button class="btMat" onclick="insert('/')">÷</button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao" onclick="insert('4')">4</button></td>
-                    <td><button class="botao" onclick="insert('5')">5</button></td>
-                    <td><button class="botao" onclick="insert('6')">6</button></td>
-                    <td><button class="botao blaranja" onclick="insert('*')">x</button></td>
+                    <td><button class="btNum" onclick="insert('4')">4</button></td>
+                    <td><button class="btNum" onclick="insert('5')">5</button></td>
+                    <td><button class="btNum" onclick="insert('6')">6</button></td>
+                    <td><button class="btMat" onclick="insert('*')">x</button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao" onclick="insert('1')">1</button></td>
-                    <td><button class="botao" onclick="insert('2')">2</button></td>
-                    <td><button class="botao" onclick="insert('3')">3</button></td>
-                    <td><button class="botao blaranja" onclick="insert('-')">-</button></td> 
+                    <td><button class="btNum" onclick="insert('1')">1</button></td>
+                    <td><button class="btNum" onclick="insert('2')">2</button></td>
+                    <td><button class="btNum" onclick="insert('3')">3</button></td>
+                    <td><button class="btMat" onclick="insert('-')">-</button></td> 
                 </tr>   
                 <tr>
-                    <td><button class="botao" onclick="insert('0')">0</button></td>
-                    <td><button class="botao" onclick="insert('.')">.</button></td>
-                    <td><button class="botao blaranja" onclick="calcular()">=</button></td>
-                    <td><button class="botao blaranja" onclick="insert('+')">+</button></td>
+                    <td><button class="btNum" onclick="insert('0')">0</button></td>
+                    <td><button class="btNum" onclick="insert('.')">.</button></td>
+                    <td><button class="btMat" onclick="calcular()">=</button></td>
+                    <td><button class="btMat" onclick="insert('+')">+</button></td>
                 </tr>
             </table>
             
