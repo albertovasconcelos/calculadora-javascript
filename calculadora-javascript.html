@@ -104,7 +104,7 @@
                 <tr>
                     <td><button class="botao" onclick="clean()">C</button></td>
                     <td><button class="botao" onclick="backspace()">DEL</button></td>
-                    <td><button class="btMat" onclick="porcentagem()">%</button></td>
+                    <td><button class="btMat" onclick="percent('%')">%</button></td>
                     <td><button class="btMat" onclick="insert('/')">÷</button></td>
                 </tr>
                 <tr>
@@ -135,7 +135,14 @@
         </div>
     </div>
 
-    <script>
+    <script type="text/javascript">
+        /*function addChar(input, character) {
+            if(input.value == null || input.value == "0")
+            input.value = character
+            else
+            input.value += character
+        }*/
+
         function insert(num)
         {
             var numero = document.getElementById('display').innerHTML;
@@ -145,11 +152,6 @@
         function clean()
         {
             document.getElementById('display').innerHTML = "";
-        }
-        
-        function porcentagem()
-        {
-            this.valorCorrente = '${parseFloat(this.valorCorrente) / 100}';
         }
 
         function backspace()
@@ -172,6 +174,10 @@
             }
         }
 
+        function percent(input) {
+            val = input.value;
+            input.value = input.value + "%";
+        }
     </script>
 
 </body>
