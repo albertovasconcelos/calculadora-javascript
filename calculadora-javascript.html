@@ -7,22 +7,34 @@
     <title>Calculadora</title>
     
     <style>
-       * {
-            padding: 0;
-            margin: 5px;
-            text-align: center;
-        }
-        fundo {
-            background-color: #39a0e6;
-        }
+        body {
+            background: -webkit-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%);
+            background: -moz-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%);
+            background: -ms-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%);
+            background: -o-linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%);
+            background: linear-gradient(90deg, #DAD299 10%, #B0DAB9 90%);
+}
 
         .calculadora {
-            margin-top: 40px;
-            border: solid 1px #000;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);;
-            border-radius: 20px;    
+            margin: 50px auto;
+            width: 300px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: collapse;
             box-shadow: 1px 1px 5px #000;
+}
+        .botao{
+            width: 60px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 5px;
+            background-color: rgb(211, 69, 69);
+            border: 1px solid rgb(0, 0, 0, 0.25);
+            color: white;
+        }
+        .botao:hover{
+            background-color: black;
         }
         .btNum{
             width: 60px;
@@ -52,15 +64,16 @@
             background-color: black;
         }
         #display{
-            background-color: #bccd95;
+            background-color: #b6eaf3;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: right;      
+            padding: 0 10px;
             width: 280px;
             height: 80px;
             margin-top: 10px;
             margin-bottom: 20px;
-            font-size: 25px;
-            text-align: right;
-            border: solid 1px #000;
-            box-shadow: 1px 1px 1px #000;
+            font-weight: 600;
+            font-size: 30px;
         }
 
         .justify-content-center {
@@ -96,33 +109,33 @@
             
             <table>
                 <tr>
-                    <td><button class="btNum" onclick="clean()">C</button></td>
-                    <td><button class="btNum" onclick="porcentagem()">%</button></td>
-                    <td colspan="2"><button class="btNum" style = "width: 106px;" onclick="backspace()">DEL</button></td>
+                    <td><button class="botao" onclick="clean()">C</button></td>
+                    <td><button class="botao" onclick="backspace()">DEL</button></td>
+                    <td><button class="btMat" onclick="porcentagem()">%</button></td>
+                    <td><button class="btMat" onclick="insert('/')">÷</button></td>
                 </tr>
                 <tr>
                     <td><button class="btNum" onclick="insert('7')">7</button></td>
                     <td><button class="btNum" onclick="insert('8')">8</button></td>
                     <td><button class="btNum" onclick="insert('9')">9</button></td>
-                    <td><button class="btMat" onclick="insert('/')">÷</button></td>
+                    <td><button class="btMat" onclick="insert('*')">x</button></td>
                 </tr>
                 <tr>
                     <td><button class="btNum" onclick="insert('4')">4</button></td>
                     <td><button class="btNum" onclick="insert('5')">5</button></td>
                     <td><button class="btNum" onclick="insert('6')">6</button></td>
-                    <td><button class="btMat" onclick="insert('*')">x</button></td>
+                    <td><button class="btMat" onclick="insert('-')">-</button></td>
                 </tr>
                 <tr>
                     <td><button class="btNum" onclick="insert('1')">1</button></td>
                     <td><button class="btNum" onclick="insert('2')">2</button></td>
                     <td><button class="btNum" onclick="insert('3')">3</button></td>
-                    <td><button class="btMat" onclick="insert('-')">-</button></td> 
+                    <td rowspan="2"><button class="botao" style="height: 106px;" onclick="insert('+')">+</button></td>   
                 </tr>   
                 <tr>
                     <td><button class="btNum" onclick="insert('0')">0</button></td>
                     <td><button class="btNum" onclick="insert('.')">.</button></td>
                     <td><button class="btMat" onclick="calcular()">=</button></td>
-                    <td><button class="btMat" onclick="insert('+')">+</button></td>
                 </tr>
             </table>
             
@@ -142,16 +155,10 @@
             document.getElementById('display').innerHTML = "";
         }
         
-        /*function porcentagem()
+        function porcentagem()
         {
-            var num = parseFloat(document.getElementById("num").value);
-            var numero = parseFloat(document.getElementById("numero").value);
-
-            if (num > numero)
-	        document.getElementById("display").value =	(num/numero)-1 *100;
-        else
-	        document.getElementById("display").value =	(num/numero)-1 *100;
-        }*/
+            this.valorCorrente = '${parseFloat(this.valorCorrente) / 100}';
+        }
 
         function backspace()
         {
