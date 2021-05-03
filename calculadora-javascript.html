@@ -84,6 +84,9 @@
             overflow: hidden;
             border-radius: 5px;
         }
+        .breakAll {
+            word-break: break-all;
+        }
 
     </style>
 
@@ -93,7 +96,9 @@
     <div class="fundo">
 
         <div class="calculadora">
-            <p id="display"></p>
+            <div class="breakAll">
+            
+                <p id="display"></p>
             
             <table class="table-responsive">
                 <tr>
@@ -126,7 +131,7 @@
                     <td><button class="btMat" onclick="calcular()">=</button></td>
                 </tr>
             </table>
-            
+            </div>
         </div>
     </div>
 
